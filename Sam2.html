@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Julian Thorne | Modern Dental Studio</title>
+    <style>
+        /* CSS STYLE SECTION */
+        :root {
+            --primary-teal: #00d2d3;
+            --secondary-coral: #ff9f43;
+            --dark-navy: #222f3e;
+            --soft-gray: #f9f9f9;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.9);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--dark-navy);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-teal);
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-navy);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Colorful Split Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #00d2d3 0%, #54a0ff 100%);
+            padding: 0 8%;
+            color: var(--white);
+            clip-path: ellipse(150% 100% at 50% 0%);
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn-main {
+            padding: 15px 40px;
+            background: var(--secondary-coral);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .btn-main:hover {
+            transform: scale(1.05);
+            background: #ff7f50;
+        }
+
+        /* Expertise Section - Asymmetrical Grid */
+        .expertise {
+            padding: 100px 8%;
+        }
+
+        .expertise-header {
+            text-align: left;
+            margin-bottom: 60px;
+        }
+
+        .expertise-header h2 {
+            font-size: 2.5rem;
+            color: var(--dark-navy);
+        }
+
+        .expertise-header .accent-line {
+            width: 80px;
+            height: 6px;
+            background: var(--primary-teal);
+            display: block;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            padding: 40px;
+            border-radius: 30px;
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:nth-child(1) { background: #e0faff; }
+        .card:nth-child(2) { background: #fff4e6; }
+        .card:nth-child(3) { background: #f0f0ff; }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-navy);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Statistics Bar - Colorful */
+        .stats {
+            background: var(--dark-navy);
+            padding: 60px 8%;
+            display: flex;
+            justify-content: space-around;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary-teal);
+        }
+
+        /* Booking Section */
+        .booking {
+            padding: 100px 8%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .booking-card {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 40px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 900px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+        }
+
+        .form-inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, select {
+            padding: 15px;
+            border: 2px solid #eee;
+            border-radius: 15px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: var(--primary-teal);
+        }
+
+        .submit-btn {
+            background: var(--primary-teal);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-text h1 { font-size: 2.5rem; }
+            .booking-card { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Thorne Studio</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#expertise">Services</a></li>
+            <li><a href="#results">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h1>Expertise for a Brighter Smile.</h1>
+            <p>Combining 15 years of surgical experience with the latest in colorful, comfortable dental technology.</p>
+            <a href="#contact" class="btn-main">Get Started Today</a>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stat-item">
+            <h3>15+</h3>
+            <p>Years Experience</p>
+        </div>
+        <div class="stat-item">
+            <h3>5k+</h3>
+            <p>Happy Patients</p>
+        </div>
+        <div class="stat-item">
+            <h3>24/7</h3>
+            <p>Emergency Care</p>
+        </div>
+    </section>
+
+    <section id="expertise" class="expertise">
+        <div class="expertise-header">
+            <h2>Specialized Care</h2>
+            <span class="accent-line"></span>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>Digital Implantology</h3>
+                <p>Advanced 3D-guided surgery for permanent tooth replacement with zero guesswork.</p>
+            </div>
+            <div class="card">
+                <h3>Veneer Artistry</h3>
+                <p>Custom-crafted porcelain veneers that match your facial features perfectly.</p>
+            </div>
+            <div class="card">
+                <h3>Sleep Dentistry</h3>
+                <p>Comfort-focused sedation options for a completely anxiety-free experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="booking">
+        <div class="booking-card">
+            <div>
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Let's Talk.</h2>
+                <p>Ready for a change? Dr. Thorne is currently accepting new patients for cosmetic consultations.</p>
+                <div style="margin-top: 30px; font-weight: bold;">
+                    <p>📍 Downtown Medical Hub</p>
+                    <p>📞 (555) 987-6543</p>
+                </div>
+            </div>
+            <form class="form-inputs">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <select>
+                    <option>Consultation Type</option>
+                    <option>Cosmetic Checkup</option>
+                    <option>Implant Inquiry</option>
+                    <option>General Care</option>
+                </select>
+                <button type="submit" class="submit-btn">Secure My Appointment</button>
+            </form>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 50px; background: var(--soft-gray);">
+        <p>&copy; 2026 Dr. Julian Thorne. Specialized Dental Portfolio.</p>
+    </footer>
+
+</body>
+</html>
